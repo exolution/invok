@@ -1,0 +1,19 @@
+{
+  "name": "invok",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "",
+  "author": {
+    "name": "exolution",
+    "email": "exolution@163.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/exolution/invok"
+  },
+  "keywords": [
+  ],
+  "dependencies": {
+  }
+}
