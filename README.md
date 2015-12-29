@@ -4,12 +4,12 @@
 ##自述
 好吧，这是一个轮子，功能上和TJ大神的co一模一样。  
 本来是我之前MVC框架内部使用的异步控制工具，现在简单重构一下简单独剥离出来。  
-没有参考过co，思路基本上是一样的，我们的Promise风格完全不一样，他是基于es6的promise。  
+没有参考过co，思路基本上是一样的，但是我们的Promise风格完全不一样，他是基于es6的promise。  
 我是基于我的Promise A/+的一个实现（没错又是一个轮子=。=）  
 非要说有啥特别的地方？我自认为代码结构相对清晰易懂一些（只有70行），好吧，只是自认为而已。
 
 对generator实现流程控制感兴趣的可以看下源代码。  
-另外自我打脸的是，浏览器运行版本为了不多引用js，用的也是es6风格promise。=。=  
+另外自我打脸的是，浏览器运行版本为了不多引用promise库，用的也是es6风格promise（浏览器自带的promise）=。=  
 ##安装
 ```javascript
 npm install invok
@@ -23,7 +23,10 @@ var invok = require('invok');
 var Promise = require('ipromise');
 function delay(data, delay) { 
     //一个异步过程（返回promise）
-    var p = Promise();
+    //这也代表了我的promise风格，这里把promise作为一种特殊的异步数据抽象。
+    //所以它像普通数据一样经历创建、填充（异步的）和返回的过程
+    //这样一来，同步函数返回同步数据，异步函数返回异步数据，写法上感觉一致化。而不是每次都把异步函数包装成一个promise（es6的风格）
+    var p = new Promise();
     setTimeout(function() {
         p.resolve(data);
     }, delay || 500);
