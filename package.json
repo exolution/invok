@@ -1,8 +1,8 @@
 {
   "name": "invok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
-  "description": "",
+  "description": "Another generator based flow control util",
   "author": {
     "name": "exolution",
     "email": "exolution@163.com"
@@ -13,7 +13,14 @@
     "url": "git://github.com/exolution/invok"
   },
   "keywords": [
+    "co",
+    "yield",
+    "generator",
+    "promise",
+    "flow control",
+    "async"
   ],
   "dependencies": {
+    "ipromise":"*"
   }
 }
