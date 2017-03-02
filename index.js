@@ -50,10 +50,7 @@ function resolveYielded(promise, generator, yielded) {
     else if(typeof yielded.value === 'function' || isGenerator(yielded.value)) {
         resolvePromise(promise, generator, invok(yielded.value));
     }
-    else if(Array.isArray(yielded.value) || yielded.value.constructor === Object) {
-        //yield出一个promise的数组以及对象 并行执行他们
-        resolvePromise(promise, generator, Promise.all(yielded.value));
-    }
+
     else {//yield出一个普通值，直接运行到下一个yield
         runToNextYield(promise, generator, yielded.value);
     }
