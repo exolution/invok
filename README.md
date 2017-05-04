@@ -1,7 +1,7 @@
 # invok
 一个基于Promise+generator(yield)的异步流程控制库
 
-##自述
+## 自述
 好吧，这是一个轮子，功能上和TJ大神的co一模一样。  
 本来是我之前MVC框架内部使用的异步控制工具，现在重构一下单独剥离出来。  
 没有参考过co，思路基本上是一样的，但是我们的Promise风格完全不一样，他是基于es6的promise。  
@@ -10,14 +10,14 @@
 
 对generator实现流程控制感兴趣的可以看下源代码。  
 另外自我打脸的是，浏览器运行版本为了不多引用promise库，用的也是es6风格promise（浏览器自带的promise）=。=  
-##安装
+## 安装
 ```javascript
 npm install invok
 ```
 额不要吐槽我的名字，其实是就是invoke这个词的简写。  
 一来invoke普通单词也没啥意思，二来npm被别人抢注了，囧rz。
 
-##测试用例+用法
+## 测试用例+用法
 ```javascript
 var invok = require('invok');
 var Promise = require('ipromise');
